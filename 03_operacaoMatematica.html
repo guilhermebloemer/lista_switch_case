@@ -9,11 +9,53 @@
     */
 
     //ENTRADA
-
+    const num = Number(prompt("Informe um número: "));
+    const num1 = Number(prompt("Informe outro número: "));
+    const operação = prompt("Informe qual opereção você deseja realizar: (+, -, * ou /)");
+    let resultado = "";
+    let parImpar = "";
+    let inteiroDecimal = "";
+    let positivoNegativo = "";
 
     //PROCESSAMENTO
+    switch (operação) {
+        case "+":
+            resultado = num + num1;
+            break;
+        case "-":
+            resultado = num - num1;
+            break;
+        case "*":
+            resultado = num * num1;
+            break;
+        case "/":
+            resultado = num / num1;
+            break;
+    }
+    switch (resultado % 2) {
+        case 0:
+            parImpar = "par";
+            break;
+            default:
+                parImpar = "ímpar";
+                break;
+    }
+    switch (resultado > 0) {
+        case true:
+            positivoNegativo = "positivo";
+            break;
+            case false:
+                positivoNegativo = "negativo";
+                break;
+        }
+    switch (resultado % 1) {
+        case 0:
+        inteiroDecimal = "inteiro"
+        break;
+        default:
+            inteiroDecimal = "decimal"
+    }
 
-    
     //SAÍDA
-
+    document.write(`O resultado da sua operação deu: ${resultado}, ele é ${parImpar}, ele é ${positivoNegativo} e ele é ${inteiroDecimal}`);
 </script>

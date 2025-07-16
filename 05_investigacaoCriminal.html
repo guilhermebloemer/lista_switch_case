@@ -8,15 +8,49 @@
     - "Mora perto da vítima?"
     - "Devia para a vítima?"
     - "Já trabalhou com a vítima?"
-    O script deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+    O script deve no final emitir uma classificação sobre a participação da pessoa no crime.
+     Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". 
+     Caso contrário, ele será classificado como "Inocente".
     */
 
     //ENTRADA
 
-    
-    //PROCESSAMENTO
+    const telefonou = prompt("Telefonou para a vítima?(S-sim ou N-não)").toUpperCase().trim();
+    const local = prompt("Esteve no local do crime?(S-sim ou N-não)").toUpperCase().trim();
+    const morador = prompt("Mora perto da vítima?(S-sim ou N-não?)").toUpperCase().trim();
+    const devedor = prompt("Devia para a vítima?(S-sim ou N-não?)").toUpperCase().trim();
+    const trabalho = prompt("Já trabalhou com a vítima?(S-sim ou N-não)").toUpperCase().trim();
 
 
-    //SAÍDA
+    let suspeito = 0;
+    let classificação = ``;
 
+    if (telefonou == "S") suspeito++;
+    if (local == "S") suspeito++;
+    if (morador == "S") suspeito++;
+    if (devedor == "S") suspeito++;
+    if (trabalho == "S") suspeito++;
+
+    switch (suspeito) {
+        case 0:
+        case 1:
+            classificação = `Inocente`;
+            break;
+        case 2:
+            classificação = `Suspeito`;
+            break;
+        case 3:
+        case 4:
+            classificação = `Cúmplice`;
+            break;
+        case 5: 
+            classificação = `Assassino`;
+            break;            
+        default:
+            alert(`Inválido!
+            Responda as perguntas com S-sim ou N-não.`)
+            break;
+    }
+
+    alert(`Sua classificação é ${classificação}!`)
 </script>
