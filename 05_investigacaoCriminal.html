@@ -9,17 +9,17 @@
     - "Devia para a vítima?"
     - "Já trabalhou com a vítima?"
     O script deve no final emitir uma classificação sobre a participação da pessoa no crime.
-     Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". 
-     Caso contrário, ele será classificado como "Inocente".
+    Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". 
+    Caso contrário, ele será classificado como "Inocente".
     */
 
     //ENTRADA
 
     const telefonou = prompt("Telefonou para a vítima?(S-sim ou N-não)").toUpperCase().trim();
-    const local = prompt("Esteve no local do crime?(S-sim ou N-não)").toUpperCase().trim();
-    const morador = prompt("Mora perto da vítima?(S-sim ou N-não?)").toUpperCase().trim();
-    const devedor = prompt("Devia para a vítima?(S-sim ou N-não?)").toUpperCase().trim();
-    const trabalho = prompt("Já trabalhou com a vítima?(S-sim ou N-não)").toUpperCase().trim();
+    const local = prompt("Esteve no local do crime?(S-sim ou N-não)").toUpperCase();
+    const morador = prompt("Mora perto da vítima?(S-sim ou N-não?)").toUpperCase();
+    const devedor = prompt("Devia para a vítima?(S-sim ou N-não?)").toUpperCase();
+    const trabalho = prompt("Já trabalhou com a vítima?(S-sim ou N-não)").toUpperCase();
 
 
     let suspeito = 0;
